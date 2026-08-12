@@ -11,18 +11,22 @@ export default function InputSidebar() {
       <form>
         <section>
           <h2>About You</h2>
+          <hr />
           <About></About>
         </section>
         <section>
           <h2>Education</h2>
+          <hr />
           <Education></Education>
         </section>
         <section>
           <h2>Skills</h2>
+          <hr />
           <Skills></Skills>
         </section>
         <section>
           <h2>Expreince</h2>
+          <hr />
           <Expreince></Expreince>
         </section>
       </form>
