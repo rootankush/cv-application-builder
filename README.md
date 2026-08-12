@@ -21,7 +21,7 @@ Install a current version of Node.js and npm.
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/rootankush/cv-application-builder.git](https://github.com/rootankush/cv-application-builder.git)
+   git clone https://github.com/rootankush/cv-application-builder.git
    ```
 
 2. Enter the project directory:
