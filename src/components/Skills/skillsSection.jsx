@@ -1,9 +1,12 @@
-export default function Skills() {
+export default function Skills({ skills, onSkillsChange }) {
+  function handleSkillsChange(e) {
+    onSkillsChange(e.target.value);
+  }
   return (
     <form className="skills-form">
-      <label htmlFor="">
+      <label>
         Skills:
-        <input type="text" />
+        <input type="text" value={skills} onChange={handleSkillsChange} />
       </label>
     </form>
   );

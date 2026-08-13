@@ -1,29 +1,64 @@
-export default function About() {
-  const inputLabel = [
-    "First Name",
-    "Last Name",
-    "Profession",
-    "Email",
-    "Phone Number",
-  ];
+export default function About({
+  firstName,
+  onFirstNameChange,
+  lastName,
+  onLastNameChange,
+  profession,
+  onProfessionChange,
+  email,
+  onEmailChange,
+  phoneNumber,
+  onPhoneNumberChange,
+}) {
+  function handleFirstNameChange(e) {
+    onFirstNameChange(e.target.value);
+  }
+
+  function handleLastNameChange(e) {
+    onLastNameChange(e.target.value);
+  }
+
+  function handleProfessionChange(e) {
+    onProfessionChange(e.target.value);
+  }
+
+  function handleEmailChange(e) {
+    onEmailChange(e.target.value);
+  }
+
+  function handlePhoneNumberChange(e) {
+    onPhoneNumberChange(e.target.value);
+  }
 
   return (
     <form className="about-details-form">
       <label>
         First Name:
-        <input type="text" className="firstName"></input>
+        <input
+          value={firstName}
+          onChange={handleFirstNameChange}
+          type="text"
+          className="firstNameInput"
+        ></input>
       </label>
       <br />
       <label>
         Last Name:
-        <input type="text" className="lastName"></input>
+        <input
+          value={lastName}
+          onChange={handleLastNameChange}
+          type="text"
+          className="lastNameInput"
+        ></input>
       </label>
       <br />
       <label>
         Profession:
         <input
           type="text"
-          className="profession"
+          value={profession}
+          onChange={handleProfessionChange}
+          className="professionInput"
           placeholder="Full Stack Developer"
         ></input>
       </label>
@@ -31,15 +66,22 @@ export default function About() {
       <label>
         Email:
         <input
+          value={email}
+          onChange={handleEmailChange}
           type="email"
-          className="email"
+          className="emailInput"
           placeholder="example@gmail.com"
         ></input>
       </label>
       <br />
       <label>
         Phone Number:
-        <input className="phoneNumber" alt="phoneNumber"></input>
+        <input
+          onChange={handlePhoneNumberChange}
+          value={phoneNumber}
+          className="phoneNumberInput"
+          alt="phoneNumber"
+        ></input>
       </label>
     </form>
   );

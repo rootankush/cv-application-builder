@@ -16,7 +16,7 @@ form {
 	flex-direction: column;
 }
 
-section {
+.card {
 	min-width: 450px;
 	background-color: white;
 	border: 1px solid black;
