@@ -43,14 +43,16 @@ export default function Expreince({
           className="startDate"
           value={jobStartDate}
           onChange={handleJobStartDateChange}
-          type="date"
+          type="text"
+          placeholder="MM/YYYY"
         />
       </label>
       <label>
         End Date:
         <input
           className="endDate"
-          type="date"
+          type="text"
+          placeholder="MM/YYYY"
           value={jobEndDate}
           onChange={handleJobEndDateChange}
         />

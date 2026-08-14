@@ -57,17 +57,19 @@ export default function Education({
       <label>
         Start Date:
         <input
+          placeholder="MM/YYYY"
           value={startDate}
           onChange={handleStartDateChange}
           className="startDate"
-          type="date"
+          type="text"
         ></input>
       </label>
       <label>
         End Date:
         <input
+          type="text"
+          placeholder="MM/YYYY"
           className="endDate"
-          type="date"
           value={endDate}
           onChange={handleEndDateChange}
         ></input>

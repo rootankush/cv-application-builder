@@ -1,34 +1,47 @@
-import About from "./components/About/aboutSection";
-import Education from "./components/Education/educationSection";
-// import Skills from "./components/Skills/skillsSection";
-// import Expreince from "./components/Expreince/expreinceSection";
+import { useState } from "react";
 import MainViewer from "./components/Main/main-viewer";
 import InputSidebar from "./components/SideBar/inputSidebar";
-import { useState } from "react";
+
+import {
+  initialEducationDetails,
+  initialPersonalDetails,
+  initialSkillsDetails,
+  initialWorkDetails,
+} from "./data/data";
 
 export default function App() {
   //About
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [profession, setProfession] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState(initialPersonalDetails.firstName);
+  const [lastName, setLastName] = useState(initialPersonalDetails.lastName);
+  const [profession, setProfession] = useState(
+    initialPersonalDetails.profession,
+  );
+  const [phoneNumber, setPhoneNumber] = useState(
+    initialPersonalDetails.phoneNumber,
+  );
+  const [email, setEmail] = useState(initialPersonalDetails.email);
 
   // Education
-  const [collageName, setCollageName] = useState("");
-  const [degree, setDegree] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [location, setLocation] = useState("");
+  const [collageName, setCollageName] = useState(
+    initialEducationDetails.collageName,
+  );
+  const [degree, setDegree] = useState(initialEducationDetails.degree);
+  const [startDate, setStartDate] = useState(initialEducationDetails.startDate);
+  const [endDate, setEndDate] = useState(initialEducationDetails.endDate);
+  const [location, setLocation] = useState(initialEducationDetails.location);
 
   //Technologie
-  const [skills, setSkills] = useState("");
+  const [skills, setSkills] = useState(initialSkillsDetails.skills);
 
   //Expreince
-  const [jobTitle, setJobTitle] = useState("");
-  const [jobStartDate, setJobStartDate] = useState("");
-  const [jobEndDate, setJobEndDate] = useState("");
-  const [jobResponsibility, setJobResponsibility] = useState("");
+  const [jobTitle, setJobTitle] = useState(initialWorkDetails.jobTitle);
+  const [jobStartDate, setJobStartDate] = useState(
+    initialWorkDetails.startDate,
+  );
+  const [jobEndDate, setJobEndDate] = useState(initialWorkDetails.endDate);
+  const [jobResponsibility, setJobResponsibility] = useState(
+    initialWorkDetails.responsibilities,
+  );
 
   return (
     <div className="main-container">
