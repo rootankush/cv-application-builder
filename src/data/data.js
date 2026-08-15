@@ -11,7 +11,8 @@ const initialEducationDetails = {
 	degree: "Bachelor of Science in Computer Science",
 	startDate: "08/2018",
 	endDate: "05/2022",
-	location: "Springfield, IL",
+	aboutCollage:
+		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis optio odit quam commodi dignissimos? Vitae fugiat, voluptatibus tempore deleniti ad unde sequi natus obcaecati dolor nisi quaerat tempora, veniam enim.",
 };
 
 const initialSkillsDetails = {
@@ -19,7 +20,7 @@ const initialSkillsDetails = {
 };
 
 const initialWorkDetails = {
-	// companyName: "Northstar Labs",
+	companyName: "Northstar Labs",
 	jobTitle: "Software Engineer",
 	startDate: "06/2022",
 	endDate: "08/2025",

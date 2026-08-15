@@ -8,15 +8,76 @@
 	flex-direction: column;
 	color: #263536;
 	background: #fffefd;
-	border-top: 0.42rem solid #c8954f;
 	width: min(100%, 52rem);
-	min-height: 65rem;
-	margin: 5rem auto;
-	padding: clamp(2rem, 5vw, 4rem);
+	height: auto;
+	margin: 10rem auto;
+	padding: 2rem;
 	box-shadow: 0 1.5rem 3.5rem #272e2d2e;
 }
 
 .informationSection {
 	display: flex;
 	flex-direction: column;
+}
+
+header {
+	margin-bottom: 2rem;
+}
+
+.nameField {
+	text-align: center;
+	font-weight: 800;
+	font-size: 4rem;
+}
+
+.professionField {
+	text-align: center;
+	font-weight: 400;
+	font-size: 1.7rem;
+}
+
+.contactSvg {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+img {
+	height: 1.5rem;
+	margin-right: 0.4rem;
+}
+
+h4,
+h3 {
+	margin: 0.4rem;
+}
+
+.degreeName {
+	font-size: 1.12rem;
+}
+
+.aboutCollage {
+	font-size: 0.9rem;
+	text-align: left;
+}
+
+.collageName {
+	margin-top: 0.4rem;
+	font-weight: 100;
+}
+
+.companyName {
+	font-weight: 100;
+}
+
+.contactField {
+	display: flex;
+	justify-content: space-evenly;
+	padding-bottom: 1rem;
+}
+
+.educationField,
+.expreienceField {
+	display: flex;
+	gap: 10rem;
 }

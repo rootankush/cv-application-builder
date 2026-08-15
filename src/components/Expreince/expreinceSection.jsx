@@ -1,4 +1,6 @@
 export default function Expreince({
+  companyName,
+  onCompanyNameChange,
   jobTitle,
   onJobTitleChange,
   jobStartDate,
@@ -8,6 +10,10 @@ export default function Expreince({
   jobResponsibility,
   onResponsibilityChange,
 }) {
+  function handleCompanyNameChange(e) {
+    onCompanyNameChange(e.target.value);
+  }
+
   function handleJobTitleChange(e) {
     onJobTitleChange(e.target.value);
   }
@@ -26,6 +32,15 @@ export default function Expreince({
 
   return (
     <form className="expreince-form">
+      <label>
+        Company Name:
+        <input
+          type="text"
+          value={companyName}
+          onChange={handleCompanyNameChange}
+          placeholder="Amazon"
+        />
+      </label>
       <label>
         Job Title:
         <input

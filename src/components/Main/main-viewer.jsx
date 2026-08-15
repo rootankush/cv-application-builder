@@ -1,4 +1,3 @@
-import resumeDemo from "../../assets/img/resume-demo.png";
 import "./main-viewer.css";
 
 export default function MainViewer({
@@ -11,8 +10,9 @@ export default function MainViewer({
   degree,
   startDate,
   endDate,
-  location,
+  aboutCollage,
   skills,
+  companyName,
   jobTitle,
   jobStartDate,
   jobEndDate,
@@ -26,24 +26,32 @@ export default function MainViewer({
         </h1>
         <h2 className="professionField">{profession}</h2>
       </header>
+      <hr />
       <article className="informationSection">
         <section className="contactField">
-          <h3>Contact</h3>
-          <h4>{phoneNumber}</h4>
-          <h4>{email}</h4>
+          <div className="contactSvg">
+            <img src="src/assets/svg/phone.svg" alt="" />
+            {phoneNumber}
+          </div>
+          <div className="contactSvg">
+            <img src="src/assets/svg/email.svg" alt="" />
+            {email}
+          </div>
         </section>
-        <section className="skillsField">
-          <h3>Skills</h3>
-          <h4>{skills}</h4>
-        </section>
+        <hr />
+        <h3>EDUCATION</h3>
+        <hr />
         <section className="educationField">
-          <h3>Education</h3>
-          <h4>{collageName}</h4>
-          <h4>
-            {startDate} - {endDate}
-          </h4>
-          <h4>{degree}</h4>
-          <h4>{location}</h4>
+          <section className="left">
+            <h4>
+              {startDate}-{endDate}
+            </h4>
+            <h4 className="collageName">{collageName}</h4>
+          </section>
+          <section className="right">
+            <h4 className="degreeName">{degree}</h4>
+            <p className="aboutCollage">{aboutCollage}</p>
+          </section>
         </section>
         {/* <section className="profileField">
           <h3>Profile</h3>
@@ -57,13 +65,24 @@ export default function MainViewer({
             exceptional results and exceeding goals for the company.
           </p>
         </section> */}
+        <h3>EXPERIENCE</h3>
+        <hr />
         <section className="expreienceField">
-          <h3>Expreience</h3>
-          <h4>{jobTitle}</h4>
-          <h4>
-            {jobStartDate}-{jobEndDate}
-          </h4>
-          <p>{jobResponsibility}</p>
+          <section className="left">
+            <h4>
+              {jobStartDate}-{jobEndDate}
+            </h4>
+            <h4 className="companyName">{companyName}</h4>
+          </section>
+          <section className="right">
+            <h4>{jobTitle}</h4>
+            <p>{jobResponsibility}</p>
+          </section>
+        </section>
+        <h3>SKILLS</h3>
+        <section className="skillsField">
+          <hr />
+          <h4>{skills}</h4>
         </section>
       </article>
     </main>

@@ -1,7 +1,7 @@
 import About from "../About/aboutSection";
 import Education from "../Education/educationSection";
-import Skills from "../Skills/skillsSection";
 import Expreince from "../Expreince/expreinceSection";
+import Skills from "../Skills/skillsSection";
 import "./inputSidebar.css";
 
 export default function InputSidebar({
@@ -23,10 +23,12 @@ export default function InputSidebar({
   onStartDateChange,
   endDate,
   onEndDateChange,
-  location,
-  onLocationChange,
+  aboutCollage,
+  onAboutCollageChange,
   skills,
   onSkillsChange,
+  companyName,
+  onCompanyNameChange,
   jobTitle,
   onJobTitleChange,
   jobStartDate,
@@ -38,7 +40,8 @@ export default function InputSidebar({
 }) {
   return (
     <aside>
-      <h1>Resume Builder</h1>
+      <h1 className="websiteTitle">Resume Builder</h1>
+      <hr />
       <form>
         <section className="card">
           <h2>About You</h2>
@@ -68,8 +71,8 @@ export default function InputSidebar({
             onStartDateChange={onStartDateChange}
             endDate={endDate}
             onEndDateChange={onEndDateChange}
-            location={location}
-            onLocationChange={onLocationChange}
+            aboutCollage={aboutCollage}
+            onAboutCollageChange={onAboutCollageChange}
           ></Education>
         </section>
         <section className="card">
@@ -81,6 +84,8 @@ export default function InputSidebar({
           <h2>Expreince</h2>
           <hr />
           <Expreince
+            companyName={companyName}
+            onCompanyNameChange={onCompanyNameChange}
             jobTitle={jobTitle}
             onJobTitleChange={onJobTitleChange}
             jobStartDate={jobStartDate}
@@ -91,6 +96,7 @@ export default function InputSidebar({
             onResponsibilityChange={onResponsibilityChange}
           ></Expreince>
         </section>
+        <button type="submit">Submit</button>
       </form>
     </aside>
   );

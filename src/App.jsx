@@ -28,12 +28,17 @@ export default function App() {
   const [degree, setDegree] = useState(initialEducationDetails.degree);
   const [startDate, setStartDate] = useState(initialEducationDetails.startDate);
   const [endDate, setEndDate] = useState(initialEducationDetails.endDate);
-  const [location, setLocation] = useState(initialEducationDetails.location);
+  const [aboutCollage, setAboutCollage] = useState(
+    initialEducationDetails.aboutCollage,
+  );
 
   //Technologie
   const [skills, setSkills] = useState(initialSkillsDetails.skills);
 
   //Expreince
+  const [companyName, setCompanyName] = useState(
+    initialWorkDetails.companyName,
+  );
   const [jobTitle, setJobTitle] = useState(initialWorkDetails.jobTitle);
   const [jobStartDate, setJobStartDate] = useState(
     initialWorkDetails.startDate,
@@ -55,8 +60,9 @@ export default function App() {
         degree={degree}
         startDate={startDate}
         endDate={endDate}
-        location={location}
+        aboutCollage={aboutCollage}
         skills={skills}
+        companyName={companyName}
         jobTitle={jobTitle}
         jobStartDate={jobStartDate}
         jobEndDate={jobEndDate}
@@ -70,8 +76,9 @@ export default function App() {
         onDegreeChange={setDegree}
         onStartDateChange={setStartDate}
         onEndDateChange={setEndDate}
-        onLocationChange={setLocation}
+        onAboutCollageChange={setAboutCollage}
         onSkillsChange={setSkills}
+        onCompanyNameChange={setCompanyName}
         onJobTitleChange={setJobTitle}
         onJobStartDateChange={setJobStartDate}
         onJobEndDateChange={setJobEndDate}
@@ -87,8 +94,9 @@ export default function App() {
         degree={degree}
         startDate={startDate}
         endDate={endDate}
-        location={location}
+        aboutCollage={aboutCollage}
         skills={skills}
+        companyName={companyName}
         jobTitle={jobTitle}
         jobStartDate={jobStartDate}
         jobEndDate={jobEndDate}

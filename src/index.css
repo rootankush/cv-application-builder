@@ -3,9 +3,41 @@
 	padding: 0;
 }
 
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("./assets/fonts/Inter_18pt-Regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("./assets/fonts/Inter_18pt-Medium.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("./assets/fonts/Inter_18pt-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("./assets/fonts/Inter_18pt-Bold.woff2") format("woff2");
+}
+
 body {
 	background-image: url(./assets/img/bg.png);
-	font-family: "Times New Roman", Times, serif;
+	font-family: Inter;
 }
 
 .main-container {

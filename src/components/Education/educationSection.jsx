@@ -7,8 +7,8 @@ export default function Education({
   onStartDateChange,
   endDate,
   onEndDateChange,
-  location,
-  onLocationChange,
+  aboutCollage,
+  onAboutCollageChange,
 }) {
   function handleCollageNameChange(e) {
     onCollageNameChange(e.target.value);
@@ -26,8 +26,8 @@ export default function Education({
     onEndDateChange(e.target.value);
   }
 
-  function handleLocationChange(e) {
-    onLocationChange(e.target.value);
+  function handleAboutCollageChange(e) {
+    onAboutCollageChange(e.target.value);
   }
 
   return (
@@ -76,13 +76,13 @@ export default function Education({
       </label>
       <br />
       <label>
-        Location:
+        About Collage:
         <input
-          value={location}
-          onChange={handleLocationChange}
+          value={aboutCollage}
+          onChange={handleAboutCollageChange}
           className="locationName"
           type="text"
-          placeholder="Springfield, IL"
+          placeholder=""
         />
       </label>
     </form>
