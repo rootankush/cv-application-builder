@@ -1,51 +1,21 @@
-export default function Expreince({
-  companyName,
-  onCompanyNameChange,
-  jobTitle,
-  onJobTitleChange,
-  jobStartDate,
-  onJobStartDateChange,
-  jobEndDate,
-  onJobEndDateChange,
-  jobResponsibility,
-  onResponsibilityChange,
-}) {
-  function handleCompanyNameChange(e) {
-    onCompanyNameChange(e.target.value);
-  }
-
-  function handleJobTitleChange(e) {
-    onJobTitleChange(e.target.value);
-  }
-
-  function handleJobStartDateChange(e) {
-    onJobStartDateChange(e.target.value);
-  }
-
-  function handleJobEndDateChange(e) {
-    onJobEndDateChange(e.target.value);
-  }
-
-  function handleResponsibilityChange(e) {
-    onResponsibilityChange(e.target.value);
-  }
-
+export default function Expreince({ work, onUpdateWork, onDeleteWork }) {
   return (
-    <form className="expreince-form">
+    <>
       <label>
         Company Name:
         <input
           type="text"
-          value={companyName}
-          onChange={handleCompanyNameChange}
+          className="companyName"
+          value={work.companyName}
+          onChange={(e) => onUpdateWork(work.id, "companyName", e.target.value)}
           placeholder="Amazon"
         />
       </label>
       <label>
         Job Title:
         <input
-          value={jobTitle}
-          onChange={handleJobTitleChange}
+          value={work.jobTitle}
+          onChange={(e) => onUpdateWork(work.id, "jobTitle", e.target.value)}
           className="jobTitle"
           type="text"
           placeholder="Software Engineer"
@@ -56,8 +26,10 @@ export default function Expreince({
         Start Date:
         <input
           className="startDate"
-          value={jobStartDate}
-          onChange={handleJobStartDateChange}
+          value={work.jobStartDate}
+          onChange={(e) =>
+            onUpdateWork(work.id, "jobStartDate", e.target.value)
+          }
           type="text"
           placeholder="MM/YYYY"
         />
@@ -68,8 +40,8 @@ export default function Expreince({
           className="endDate"
           type="text"
           placeholder="MM/YYYY"
-          value={jobEndDate}
-          onChange={handleJobEndDateChange}
+          value={work.jobEndDate}
+          onChange={(e) => onUpdateWork(work.id, "jobEndDate", e.target.value)}
         />
       </label>
       <br />
@@ -77,16 +49,27 @@ export default function Expreince({
         Responsibility:
         <br />
         <textarea
-          value={jobResponsibility}
-          onChange={handleResponsibilityChange}
+          value={work.jobResponsibility}
+          onChange={(e) =>
+            onUpdateWork(work.id, "jobResponsibility", e.target.value)
+          }
           type="text"
-          className="responsibilityText"
+          className="jobResponsibility"
           placeholder="Developed and maintained customer-facing web application features."
           required
           minLength="2"
           maxLength="100"
         ></textarea>
       </label>
-    </form>
+      <section className="btnBar">
+        <button
+          className="deleteBtn"
+          type="button"
+          onClick={() => onDeleteWork(work.id)}
+        >
+          Delete
+        </button>
+      </section>
+    </>
   );
 }

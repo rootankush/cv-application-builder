@@ -1,42 +1,17 @@
 export default function Education({
-  collageName,
-  onCollageNameChange,
-  degree,
-  onDegreeChange,
-  startDate,
-  onStartDateChange,
-  endDate,
-  onEndDateChange,
-  aboutCollage,
-  onAboutCollageChange,
+  edu,
+  onUpdateEducation,
+  onDeleteEducation,
 }) {
-  function handleCollageNameChange(e) {
-    onCollageNameChange(e.target.value);
-  }
-
-  function handleDegreeChange(e) {
-    onDegreeChange(e.target.value);
-  }
-
-  function handleStartDateChange(e) {
-    onStartDateChange(e.target.value);
-  }
-
-  function handleEndDateChange(e) {
-    onEndDateChange(e.target.value);
-  }
-
-  function handleAboutCollageChange(e) {
-    onAboutCollageChange(e.target.value);
-  }
-
   return (
-    <form className="education-form">
+    <>
       <label>
         Collage Name:
         <input
-          value={collageName}
-          onChange={handleCollageNameChange}
+          value={edu.collageName}
+          onChange={(e) =>
+            onUpdateEducation(edu.id, "collageName", e.target.value)
+          }
           type="text"
           className="collageName"
           placeholder="State University"
@@ -46,9 +21,9 @@ export default function Education({
       <label>
         Degree:
         <input
-          value={degree}
-          onChange={handleDegreeChange}
           type="text"
+          value={edu.degree}
+          onChange={(e) => onUpdateEducation(edu.id, "degree", e.target.value)}
           className="degreeName"
           placeholder="Bachelor of Science in Computer Science"
         ></input>
@@ -58,8 +33,10 @@ export default function Education({
         Start Date:
         <input
           placeholder="MM/YYYY"
-          value={startDate}
-          onChange={handleStartDateChange}
+          value={edu.startDate}
+          onChange={(e) =>
+            onUpdateEducation(edu.id, "startDate", e.target.value)
+          }
           className="startDate"
           type="text"
         ></input>
@@ -70,21 +47,32 @@ export default function Education({
           type="text"
           placeholder="MM/YYYY"
           className="endDate"
-          value={endDate}
-          onChange={handleEndDateChange}
+          value={edu.endDate}
+          onChange={(e) => onUpdateEducation(edu.id, "endDate", e.target.value)}
         ></input>
       </label>
       <br />
       <label>
         About Collage:
         <input
-          value={aboutCollage}
-          onChange={handleAboutCollageChange}
           className="locationName"
           type="text"
+          value={edu.aboutCollage}
+          onChange={(e) =>
+            onUpdateEducation(edu.id, "aboutCollage", e.target.value)
+          }
           placeholder=""
         />
       </label>
-    </form>
+      <section className="btnBar">
+        <button
+          className="deleteBtn"
+          type="button"
+          onClick={() => onDeleteEducation(edu.id)}
+        >
+          Delete
+        </button>
+      </section>
+    </>
   );
 }

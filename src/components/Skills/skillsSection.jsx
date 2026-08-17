@@ -1,13 +1,23 @@
-export default function Skills({ skills, onSkillsChange }) {
-  function handleSkillsChange(e) {
-    onSkillsChange(e.target.value);
-  }
+export default function Skills({ skill, onUpdateSkill, onDeleteSkill }) {
   return (
-    <form className="skills-form">
+    <>
       <label>
         Skills:
-        <input type="text" value={skills} onChange={handleSkillsChange} />
+        <input
+          type="text"
+          value={skill.skills}
+          onChange={(e) => onUpdateSkill(skill.id, "skills", e.target.value)}
+        />
       </label>
-    </form>
+      <section className="btnBar">
+        <button
+          className="deleteBtn"
+          type="button"
+          onClick={() => onDeleteSkill(skill.id)}
+        >
+          Delete
+        </button>
+      </section>
+    </>
   );
 }

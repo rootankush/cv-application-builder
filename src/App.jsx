@@ -22,31 +22,116 @@ export default function App() {
   const [email, setEmail] = useState(initialPersonalDetails.email);
 
   // Education
-  const [collageName, setCollageName] = useState(
-    initialEducationDetails.collageName,
-  );
-  const [degree, setDegree] = useState(initialEducationDetails.degree);
-  const [startDate, setStartDate] = useState(initialEducationDetails.startDate);
-  const [endDate, setEndDate] = useState(initialEducationDetails.endDate);
-  const [aboutCollage, setAboutCollage] = useState(
-    initialEducationDetails.aboutCollage,
-  );
+  const [educationList, setEducationList] = useState([
+    {
+      id: crypto.randomUUID(),
+      collageName: initialEducationDetails.collageName,
+      degree: initialEducationDetails.degree,
+      startDate: initialEducationDetails.startDate,
+      endDate: initialEducationDetails.endDate,
+      aboutCollage: initialEducationDetails.aboutCollage,
+    },
+  ]);
 
   //Technologie
-  const [skills, setSkills] = useState(initialSkillsDetails.skills);
+  const [skillsList, setSkillsList] = useState([
+    {
+      id: crypto.randomUUID(),
+      skills: initialSkillsDetails.skills,
+    },
+  ]);
 
   //Expreince
-  const [companyName, setCompanyName] = useState(
-    initialWorkDetails.companyName,
-  );
-  const [jobTitle, setJobTitle] = useState(initialWorkDetails.jobTitle);
-  const [jobStartDate, setJobStartDate] = useState(
-    initialWorkDetails.startDate,
-  );
-  const [jobEndDate, setJobEndDate] = useState(initialWorkDetails.endDate);
-  const [jobResponsibility, setJobResponsibility] = useState(
-    initialWorkDetails.responsibilities,
-  );
+  const [workList, setWorkList] = useState([
+    {
+      id: crypto.randomUUID(),
+      companyName: initialWorkDetails.companyName,
+      jobTitle: initialWorkDetails.jobTitle,
+      jobStartDate: initialWorkDetails.startDate,
+      jobEndDate: initialWorkDetails.endDate,
+      jobResponsibility: initialWorkDetails.responsibilities,
+    },
+  ]);
+
+  function handleAddEducation() {
+    const newEducation = {
+      id: crypto.randomUUID(),
+      collageName: "",
+      degree: "",
+      startDate: "",
+      endDate: "",
+      aboutCollage: "",
+    };
+
+    setEducationList([...educationList, newEducation]);
+  }
+
+  function handleDeleteEducation(index) {
+    setEducationList(educationList.filter((edu) => edu.id !== index));
+  }
+
+  function handleUpdateEducation(index, field, value) {
+    setEducationList(
+      educationList.map((edu) => {
+        if (edu.id === index) {
+          return { ...edu, [field]: value };
+        }
+        return edu;
+      }),
+    );
+  }
+
+  function handleAddSkill() {
+    const newSkill = {
+      id: crypto.randomUUID(),
+      skills: "",
+    };
+
+    setSkillsList([...skillsList, newSkill]);
+  }
+
+  function handleDeleteSkill(index) {
+    setSkillsList(skillsList.filter((skill) => skill.id !== index));
+  }
+
+  function handleUpdateSkill(index, field, value) {
+    setSkillsList(
+      skillsList.map((skill) => {
+        if (skill.id === index) {
+          return { ...skill, [field]: value };
+        }
+        return skill;
+      }),
+    );
+  }
+
+  function handleAddWork() {
+    const newWork = {
+      id: crypto.randomUUID(),
+      companyName: "",
+      jobTitle: "",
+      jobStartDate: "",
+      jobEndDate: "",
+      jobResponsibility: "",
+    };
+
+    setWorkList([...workList, newWork]);
+  }
+
+  function handleDeleteWork(index) {
+    setWorkList(workList.filter((work) => work.id !== index));
+  }
+
+  function handleUpdateWork(index, field, value) {
+    setWorkList(
+      workList.map((work) => {
+        if (work.id === index) {
+          return { ...work, [field]: value };
+        }
+        return work;
+      }),
+    );
+  }
 
   return (
     <div className="main-container">
@@ -56,33 +141,23 @@ export default function App() {
         profession={profession}
         phoneNumber={phoneNumber}
         email={email}
-        collageName={collageName}
-        degree={degree}
-        startDate={startDate}
-        endDate={endDate}
-        aboutCollage={aboutCollage}
-        skills={skills}
-        companyName={companyName}
-        jobTitle={jobTitle}
-        jobStartDate={jobStartDate}
-        jobEndDate={jobEndDate}
-        jobResponsibility={jobResponsibility}
+        educationList={educationList}
+        skillsList={skillsList}
+        workList={workList}
         onFirstNameChange={setFirstName}
         onLastNameChange={setLastName}
         onProfessionChange={setProfession}
         onPhoneNumberChange={setPhoneNumber}
         onEmailChange={setEmail}
-        onCollageNameChange={setCollageName}
-        onDegreeChange={setDegree}
-        onStartDateChange={setStartDate}
-        onEndDateChange={setEndDate}
-        onAboutCollageChange={setAboutCollage}
-        onSkillsChange={setSkills}
-        onCompanyNameChange={setCompanyName}
-        onJobTitleChange={setJobTitle}
-        onJobStartDateChange={setJobStartDate}
-        onJobEndDateChange={setJobEndDate}
-        onResponsibilityChange={setJobResponsibility}
+        onAddEducation={handleAddEducation}
+        onDeleteEducation={handleDeleteEducation}
+        onUpdateEducation={handleUpdateEducation}
+        onAddSkill={handleAddSkill}
+        onDeleteSkill={handleDeleteSkill}
+        onUpdateSkill={handleUpdateSkill}
+        onAddWork={handleAddWork}
+        onDeleteWork={handleDeleteWork}
+        onUpdateWork={handleUpdateWork}
       ></InputSidebar>
       <MainViewer
         firstName={firstName}
@@ -90,17 +165,9 @@ export default function App() {
         profession={profession}
         phoneNumber={phoneNumber}
         email={email}
-        collageName={collageName}
-        degree={degree}
-        startDate={startDate}
-        endDate={endDate}
-        aboutCollage={aboutCollage}
-        skills={skills}
-        companyName={companyName}
-        jobTitle={jobTitle}
-        jobStartDate={jobStartDate}
-        jobEndDate={jobEndDate}
-        jobResponsibility={jobResponsibility}
+        educationList={educationList}
+        skillsList={skillsList}
+        workList={workList}
       ></MainViewer>
     </div>
   );

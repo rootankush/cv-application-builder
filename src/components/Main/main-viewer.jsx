@@ -6,17 +6,9 @@ export default function MainViewer({
   profession,
   email,
   phoneNumber,
-  collageName,
-  degree,
-  startDate,
-  endDate,
-  aboutCollage,
-  skills,
-  companyName,
-  jobTitle,
-  jobStartDate,
-  jobEndDate,
-  jobResponsibility,
+  educationList,
+  skillsList,
+  workList,
 }) {
   return (
     <main className="resumeReviewer">
@@ -41,18 +33,21 @@ export default function MainViewer({
         <hr />
         <h3>EDUCATION</h3>
         <hr />
-        <section className="educationField">
-          <section className="left">
-            <h4>
-              {startDate}-{endDate}
-            </h4>
-            <h4 className="collageName">{collageName}</h4>
+        <hr />
+        {educationList.map((edu) => (
+          <section className="educationField" key={edu.id}>
+            <section className="left">
+              <h4>
+                {edu.startDate} - {edu.endDate}
+              </h4>
+              <h4 className="collageName">{edu.collageName}</h4>
+            </section>
+            <section className="right">
+              <h4 className="degreeName">{edu.degree}</h4>
+              <p className="aboutCollage">{edu.aboutCollage}</p>
+            </section>
           </section>
-          <section className="right">
-            <h4 className="degreeName">{degree}</h4>
-            <p className="aboutCollage">{aboutCollage}</p>
-          </section>
-        </section>
+        ))}
         {/* <section className="profileField">
           <h3>Profile</h3>
           <p>
@@ -67,22 +62,28 @@ export default function MainViewer({
         </section> */}
         <h3>EXPERIENCE</h3>
         <hr />
-        <section className="expreienceField">
-          <section className="left">
-            <h4>
-              {jobStartDate}-{jobEndDate}
-            </h4>
-            <h4 className="companyName">{companyName}</h4>
+        {workList.map((work) => (
+          <section className="expreienceField" key={work.id}>
+            <section className="left">
+              <h4>
+                {work.jobStartDate}-{work.jobEndDate}
+              </h4>
+              <h4 className="companyName">{work.companyName}</h4>
+            </section>
+            <section className="right">
+              <h4>{work.jobTitle}</h4>
+              <p>{work.jobResponsibility}</p>
+            </section>
           </section>
-          <section className="right">
-            <h4>{jobTitle}</h4>
-            <p>{jobResponsibility}</p>
-          </section>
-        </section>
+        ))}
         <h3>SKILLS</h3>
+        <hr />
         <section className="skillsField">
-          <hr />
-          <h4>{skills}</h4>
+          {skillsList.map((skill) => (
+            <span key={skill.id} className="skillTag">
+              {skill.skills}
+            </span>
+          ))}
         </section>
       </article>
     </main>

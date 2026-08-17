@@ -15,28 +15,18 @@ export default function InputSidebar({
   onEmailChange,
   phoneNumber,
   onPhoneNumberChange,
-  collageName,
-  onCollageNameChange,
-  degree,
-  onDegreeChange,
-  startDate,
-  onStartDateChange,
-  endDate,
-  onEndDateChange,
-  aboutCollage,
-  onAboutCollageChange,
-  skills,
-  onSkillsChange,
-  companyName,
-  onCompanyNameChange,
-  jobTitle,
-  onJobTitleChange,
-  jobStartDate,
-  onJobStartDateChange,
-  jobEndDate,
-  onJobEndDateChange,
-  jobResponsibility,
-  onResponsibilityChange,
+  educationList,
+  onAddEducation,
+  onDeleteEducation,
+  onUpdateEducation,
+  skillsList,
+  onAddSkill,
+  onDeleteSkill,
+  onUpdateSkill,
+  workList,
+  onAddWork,
+  onDeleteWork,
+  onUpdateWork,
 }) {
   return (
     <aside>
@@ -62,41 +52,48 @@ export default function InputSidebar({
         <section className="card">
           <h2>Education</h2>
           <hr />
-          <Education
-            collageName={collageName}
-            onCollageNameChange={onCollageNameChange}
-            degree={degree}
-            onDegreeChange={onDegreeChange}
-            startDate={startDate}
-            onStartDateChange={onStartDateChange}
-            endDate={endDate}
-            onEndDateChange={onEndDateChange}
-            aboutCollage={aboutCollage}
-            onAboutCollageChange={onAboutCollageChange}
-          ></Education>
+          {educationList.map((edu) => (
+            <Education
+              key={edu.id}
+              edu={edu}
+              onUpdateEducation={onUpdateEducation}
+              onDeleteEducation={onDeleteEducation}
+            />
+          ))}
+          <button type="button" className="addBtn" onClick={onAddEducation}>
+            + Add Education
+          </button>
         </section>
         <section className="card">
           <h2>Technologies</h2>
           <hr />
-          <Skills skills={skills} onSkillsChange={onSkillsChange}></Skills>
+          {skillsList.map((skill) => (
+            <Skills
+              key={skill.id}
+              skill={skill}
+              onUpdateSkill={onUpdateSkill}
+              onDeleteSkill={onDeleteSkill}
+            ></Skills>
+          ))}
+          <button type="button" className="addBtn" onClick={onAddSkill}>
+            + Add Skill
+          </button>
         </section>
         <section className="card">
           <h2>Expreince</h2>
           <hr />
-          <Expreince
-            companyName={companyName}
-            onCompanyNameChange={onCompanyNameChange}
-            jobTitle={jobTitle}
-            onJobTitleChange={onJobTitleChange}
-            jobStartDate={jobStartDate}
-            onJobStartDateChange={onJobStartDateChange}
-            jobEndDate={jobEndDate}
-            onJobEndDateChange={onJobEndDateChange}
-            jobResponsibility={jobResponsibility}
-            onResponsibilityChange={onResponsibilityChange}
-          ></Expreince>
+          {workList.map((work) => (
+            <Expreince
+              key={work.id}
+              work={work}
+              onUpdateWork={onUpdateWork}
+              onDeleteWork={onDeleteWork}
+            ></Expreince>
+          ))}
+          <button type="button" className="addBtn" onClick={onAddWork}>
+            + Add Work
+          </button>
         </section>
-        <button type="submit">Submit</button>
       </form>
     </aside>
   );

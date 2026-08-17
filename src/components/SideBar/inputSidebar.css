@@ -120,3 +120,8 @@ button:active {
 	box-shadow: none;
 	transform: translateY(0);
 }
+
+.btnBar {
+	display: flex;
+	justify-content: space-evenly;
+}
