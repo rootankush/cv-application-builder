@@ -64,15 +64,13 @@ export default function Education({
           placeholder=""
         />
       </label>
-      <section className="btnBar">
-        <button
-          className="deleteBtn"
-          type="button"
-          onClick={() => onDeleteEducation(edu.id)}
-        >
-          Delete
-        </button>
-      </section>
+      <button
+        className="deleteBtn"
+        type="button"
+        onClick={() => onDeleteEducation(edu.id)}
+      >
+        Delete
+      </button>
     </>
   );
 }

@@ -81,3 +81,19 @@ h3 {
 	display: flex;
 	gap: 10rem;
 }
+
+.skillsField {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.skillTag {
+	background-color: #e5e7eb;
+	color: #1f2937;
+	padding: 4px 10px;
+	border-radius: 4px;
+	font-size: 0.85rem;
+	font-weight: 500;
+}

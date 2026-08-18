@@ -15,9 +15,11 @@ const initialEducationDetails = {
 		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis optio odit quam commodi dignissimos? Vitae fugiat, voluptatibus tempore deleniti ad unde sequi natus obcaecati dolor nisi quaerat tempora, veniam enim.",
 };
 
-const initialSkillsDetails = {
-	skills: "HTML CSS Javascript",
-};
+const initialSkillsDetails = [
+	{ id: crypto.randomUUID(), skills: "HTML" },
+	{ id: crypto.randomUUID(), skills: "CSS" },
+	{ id: crypto.randomUUID(), skills: "Javascript" },
+];
 
 const initialWorkDetails = {
 	companyName: "Northstar Labs",

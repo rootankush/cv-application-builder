@@ -61,15 +61,13 @@ export default function Expreince({ work, onUpdateWork, onDeleteWork }) {
           maxLength="100"
         ></textarea>
       </label>
-      <section className="btnBar">
-        <button
-          className="deleteBtn"
-          type="button"
-          onClick={() => onDeleteWork(work.id)}
-        >
-          Delete
-        </button>
-      </section>
+      <button
+        className="deleteBtn"
+        type="button"
+        onClick={() => onDeleteWork(work.id)}
+      >
+        Delete
+      </button>
     </>
   );
 }

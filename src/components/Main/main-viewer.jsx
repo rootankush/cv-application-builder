@@ -33,12 +33,11 @@ export default function MainViewer({
         <hr />
         <h3>EDUCATION</h3>
         <hr />
-        <hr />
         {educationList.map((edu) => (
           <section className="educationField" key={edu.id}>
             <section className="left">
               <h4>
-                {edu.startDate} - {edu.endDate}
+                {edu.startDate}-{edu.endDate}
               </h4>
               <h4 className="collageName">{edu.collageName}</h4>
             </section>

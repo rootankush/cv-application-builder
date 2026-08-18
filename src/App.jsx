@@ -34,12 +34,7 @@ export default function App() {
   ]);
 
   //Technologie
-  const [skillsList, setSkillsList] = useState([
-    {
-      id: crypto.randomUUID(),
-      skills: initialSkillsDetails.skills,
-    },
-  ]);
+  const [skillsList, setSkillsList] = useState(initialSkillsDetails);
 
   //Expreince
   const [workList, setWorkList] = useState([

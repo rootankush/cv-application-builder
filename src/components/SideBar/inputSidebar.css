@@ -91,7 +91,7 @@ button {
 	font-size: 16px;
 	font-weight: 600;
 	line-height: normal;
-	margin: 0;
+	margin-right: 2rem;
 	min-height: 3.75em;
 	min-width: 0;
 	outline: none;
@@ -119,9 +119,4 @@ button:hover {
 button:active {
 	box-shadow: none;
 	transform: translateY(0);
-}
-
-.btnBar {
-	display: flex;
-	justify-content: space-evenly;
 }

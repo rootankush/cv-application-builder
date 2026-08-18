@@ -9,15 +9,13 @@ export default function Skills({ skill, onUpdateSkill, onDeleteSkill }) {
           onChange={(e) => onUpdateSkill(skill.id, "skills", e.target.value)}
         />
       </label>
-      <section className="btnBar">
-        <button
-          className="deleteBtn"
-          type="button"
-          onClick={() => onDeleteSkill(skill.id)}
-        >
-          Delete
-        </button>
-      </section>
+      <button
+        className="deleteBtn"
+        type="button"
+        onClick={() => onDeleteSkill(skill.id)}
+      >
+        Delete
+      </button>
     </>
   );
 }
