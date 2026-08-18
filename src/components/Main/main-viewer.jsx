@@ -1,3 +1,5 @@
+import emailIcon from "../../assets/svg/email.svg";
+import phoneIcon from "../../assets/svg/phone.svg";
 import "./main-viewer.css";
 
 export default function MainViewer({
@@ -22,11 +24,11 @@ export default function MainViewer({
       <article className="informationSection">
         <section className="contactField">
           <div className="contactSvg">
-            <img src="/phone.svg" alt="" />
+            <img src={phoneIcon} alt="" />
             {phoneNumber}
           </div>
           <div className="contactSvg">
-            <img src="/email.svg" alt="" />
+            <img src={emailIcon} alt="" />
             {email}
           </div>
         </section>
