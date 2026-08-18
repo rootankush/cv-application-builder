@@ -22,11 +22,11 @@ export default function MainViewer({
       <article className="informationSection">
         <section className="contactField">
           <div className="contactSvg">
-            <img src="public/phone.svg" alt="" />
+            <img src="src/assets/svg/phone.svg" alt="" />
             {phoneNumber}
           </div>
           <div className="contactSvg">
-            <img src="public/email.svg" alt="" />
+            <img src="src/assets/svg/email.svg" alt="" />
             {email}
           </div>
         </section>
