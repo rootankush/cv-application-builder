@@ -95,6 +95,9 @@ export default function InputSidebar({
           </button>
         </section>
       </form>
+      <button type="button" className="printBtn" onClick={() => window.print()}>
+        Print / Save PDF
+      </button>
     </aside>
   );
 }
